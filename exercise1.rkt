@@ -1,0 +1,28 @@
+#lang racket
+
+(define mylist '(1 2 3 4))
+(define mycons (cons 1 2))
+
+(define (add a b)
+  (+ a b))
+(define (proc a b oper)
+  (oper a b))
+
+(define (is_equal a)
+  (cond ( (equal? a 5) (display "a"))
+        ( (equal? (remainder a 2) 0) (display "b"))
+        (else (display "c"))))
+(define (is_equal2 a)
+  (if (= a 1)
+      (print "a")
+      (print "b")))
+(define (fact n)
+  (cond ((= n 0) 1)
+        (else (* n (fact (- n 1))))))
+(define (fib n)
+  (cond ((or (equal? n 1) (equal? n 0)) 1)
+        (else (+ (fib (- n 1)) (fib (- n 2))))))
+(define (gen-list n)
+  (cond ((equal? n 0) '(0) )
+        ((odd? n) (gen-list (- n 1)))
+         (else (cons n (gen-list (- n 1))))))
